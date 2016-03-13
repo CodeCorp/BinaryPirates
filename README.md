@@ -11,4 +11,19 @@ Install all the tables in your database. Give them the passwords as written in t
 Run it on your server
 
 
+Database Structure
+--------------------
+
+There are three databases and each has the corresponding tables:
+1) binary_pirates
+	-> users
+2) hack
+	-> CIA_Official_Records
+	-> Joker
+3) hijack
+	-> users
+
+
+
+
 Kindly do not use these files for anything other than personal learning without the consent of the author.
