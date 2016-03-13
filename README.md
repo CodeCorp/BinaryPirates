@@ -3,6 +3,8 @@ Binary Pirates
 
 These are the source files for the BinaryPirates CTF event that was organized at BITS GOA Quark 2016. The files are complete along with solutions and can be used for educational purposes.
 
+Website : binarypirates.bits-quark.org
+
 How to use them
 ----------------
 
@@ -16,12 +18,12 @@ Database Structure
 
 There are three databases and each has the corresponding tables:
 1) binary_pirates
-	-> users
+	users
 2) hack
-	-> CIA_Official_Records
-	-> Joker
+	CIA_Official_Records
+	Joker
 3) hijack
-	-> users
+	users
 
 
 
